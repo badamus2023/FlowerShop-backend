@@ -11,7 +11,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "node server.js"
   },
   "author": "Bartosz Adamus",
   "license": "ISC",
