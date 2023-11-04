@@ -2,6 +2,10 @@ import fs from 'node:fs/promises'
 import express from "express";
 import bodyParser from "body-parser";
 import dotenv from 'dotenv';
+import { dirname, path } from 'path';
+import { fileURLToPath } from "url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 
@@ -11,7 +15,7 @@ const PORT = process.env.PORT
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use((req, res, next) => {
