@@ -28,20 +28,5 @@
       "2": { "name": "rose", "quantity": 1, "price": 12 },
       "3": { "name": "kaktus", "quantity": 1, "price": 15 }
     }
-  },
-  {
-    "id": 3,
-    "orderLocation": {
-      "userName": "rensa",
-      "userStreet": "boblowa",
-      "userPostal": "45213",
-      "userCity": "kocimruk"
-    },
-    "orderItems": {
-      "0": { "name": "rose", "quantity": 1, "price": 12 },
-      "1": { "name": "pelargonia", "quantity": 1, "price": 7 },
-      "2": { "name": "chryzantema", "quantity": 1, "price": 7 },
-      "3": { "name": "kaktus", "quantity": 1, "price": 15 }
-    }
   }
 ]
