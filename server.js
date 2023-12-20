@@ -18,6 +18,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/images', express.static(path.join(__dirname, 'public', 'images')));
+app.use(express.static(path.join(__dirname, 'build')))
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -32,7 +33,9 @@ app.use((req, res, next) => {
   next();
 });
 
-
+app.get('/', async (req,res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+})
 
 app.get('/flowers', async (req, res) => {
     const flowersContent = await fs.readFile('./data/flowers.json');
@@ -196,5 +199,5 @@ app.put('/flowers/:id', async (req, res) => {
 
 
 app.listen(PORT, () => {
-    console.log('server is running on port 3000')
+    console.log(`server is running on port ${PORT}`)
 })
